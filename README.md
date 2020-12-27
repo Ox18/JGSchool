@@ -6,6 +6,11 @@
 > evaluaciones y mostrar el promedio de ellas. Incluye una sección para
 > poder gestionar al personal docente como alumnado.
 
+**¿En qué modelo de arquitectura ha sido usado?**
+
+> Basado en NCapas. Una arquitectura Cliente-Servidor que separa los
+> componentes o partes de un  software.
+
 **¿Qué tecnologías han sido usadas?**
 
 > C# - SQLServer
