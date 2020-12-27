@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministradorCP.cs">
+    <Compile Include="ProfesoresPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministradorCP.Designer.cs">
-      <DependentUpon>AdministradorCP.cs</DependentUpon>
+    <Compile Include="ProfesoresPanel.Designer.cs">
+      <DependentUpon>ProfesoresPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdministradorCP.resx">
-      <DependentUpon>AdministradorCP.cs</DependentUpon>
+    <EmbeddedResource Include="ProfesoresPanel.resx">
+      <DependentUpon>ProfesoresPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{0e292e7c-a134-4037-8057-55b655e2e27a}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{4ffa033f-201f-4a7c-bec4-6d9b93347e9a}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

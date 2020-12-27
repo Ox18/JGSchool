@@ -5,31 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using CapaEntidad;
-
 namespace CapaNegocio
 {
     public class ProfesorCN
     {
         public ProfesorCE BuscarID(int idBuscado)
         {
-            ProfesorCN profesorCN = new ProfesorCN();
+            ProfesorCD profesorCD = new ProfesorCD();
 
-            ProfesorCE profesorCE = profesorCN.BuscarID(idBuscado);
+            ProfesorCE profesorCE = profesorCD.BuscarID(idBuscado);
 
             return profesorCE;
         }
         public List<ProfesorCE> BuscarNombre(string nombreBuscar)
         {
-            ProfesorCN profesorCN = new ProfesorCN();
-            List<ProfesorCE> profesorCEs = profesorCN.BuscarNombre(nombreBuscar);
+            ProfesorCD profesorCD = new ProfesorCD();
+            List<ProfesorCE> profesorCEs = profesorCD.BuscarNombre(nombreBuscar);
 
             return profesorCEs;
 
         }
         public List<ProfesorCE> Listar()
         {
-            ProfesorCN profesorCN = new ProfesorCN();
-            List<ProfesorCE> profesorCEs = profesorCN.ListarProfesores();
+            ProfesorCD profesorCD = new ProfesorCD();
+            List<ProfesorCE> profesorCEs = profesorCD.ListarProfesores();
 
             return profesorCEs;
 
@@ -37,24 +36,24 @@ namespace CapaNegocio
 
         public int Insertar(ProfesorCE profesorCE)
         {
-            ProfesorCN profesorCN = new ProfesorCN();
-            int idNuevo = profesorCN.Insertar(profesorCE);
+            ProfesorCD profesorCD = new ProfesorCD();
+            int idNuevo = profesorCD.Insertar(profesorCE);
 
             return idNuevo;
 
         }
         public int Actualizar(ProfesorCE profesorCE)
         {
-            ProfesorCN profesorCN = new ProfesorCN();
-            int filasAfectadas = profesorCN.Actualizar(profesorCE);
+            ProfesorCD profesorCD = new ProfesorCD();
+            int filasAfectadas = profesorCD.Actualizar(profesorCE);
 
             return filasAfectadas;
 
         }
         public int Eliminar(ProfesorCE profesorCE)
         {
-            ProfesorCN profesorCN = new ProfesorCN();
-            int filasAfectadas = profesorCN.Eliminar(profesorCE);
+            ProfesorCD profesorCD = new ProfesorCD();
+            int filasAfectadas = profesorCD.Eliminar(profesorCE);
 
             return filasAfectadas;
 

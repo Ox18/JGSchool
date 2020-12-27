@@ -8,7 +8,7 @@ using CapaEntidad;
 using System.Data;
 namespace CapaDatos
 {
-    class ProfesorCD
+    public class ProfesorCD
     {
         public ProfesorCE BuscarID(int idBuscado)
         {
@@ -123,7 +123,7 @@ namespace CapaDatos
             // Retornar el profesor
             return profesorCEs;
         }
-        public int Insertar(ProfesorCE profesor)
+        public int Insertar(ProfesorCE profesorCE)
         {
             // Crear la conexion
             SqlConnection connection = ConexionCD.conectarBD();
@@ -138,15 +138,15 @@ namespace CapaDatos
             command.CommandType = CommandType.Text;
 
             // Asignar Consulta SQL
-            command.CommandText = "INSERT INTO Profesor(nombre, dni, fechaNac, telefono, correo) " +
+            command.CommandText = "INSERT INTO Profesor (nombre, dni, fechaNac, telefono, correo) " +
                 "VALUES (@nombre, @dni, @fechaNac, @telefono, @correo)";
 
             // Asignar valor al parametro
-            command.Parameters.AddWithValue("@nombre", profesor.Nombre);
-            command.Parameters.AddWithValue("@dni", profesor.Dni);
-            command.Parameters.AddWithValue("@fechaNac", profesor.FechaNac);
-            command.Parameters.AddWithValue("@telefono", profesor.Telefono);
-            command.Parameters.AddWithValue("@correo", profesor.Correo);
+            command.Parameters.AddWithValue("@nombre", profesorCE.Nombre);
+            command.Parameters.AddWithValue("@dni", profesorCE.Dni);
+            command.Parameters.AddWithValue("@fechaNac", profesorCE.FechaNac.ToLocalTime());
+            command.Parameters.AddWithValue("@telefono", profesorCE.Telefono);
+            command.Parameters.AddWithValue("@correo", profesorCE.Correo);
 
 
             // Ejecutar comando / insert
@@ -161,7 +161,7 @@ namespace CapaDatos
                 command.CommandText = "Select max(id) as nuevoId from Profesor " +
                     "where nombre = @nombre";
                 // Actualizar el parametro
-                command.Parameters["@nombre"].Value = profesor.Nombre;
+                command.Parameters["@nombre"].Value = profesorCE.Nombre;
 
                 // Ejecutar el comando
                 SqlDataReader dataReader = command.ExecuteReader();
