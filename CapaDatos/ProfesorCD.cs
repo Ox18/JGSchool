@@ -123,6 +123,7 @@ namespace CapaDatos
             // Retornar el profesor
             return profesorCEs;
         }
+
         public int Insertar(ProfesorCE profesorCE)
         {
             // Crear la conexion
@@ -263,7 +264,7 @@ namespace CapaDatos
             return numFilas;
         }
 
-        public List<ProfesorCE> ListarProfesores()
+        public List<ProfesorCE> Listar()
         {
             // Crear la conexion
             SqlConnection connection = ConexionCD.conectarBD();

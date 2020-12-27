@@ -28,7 +28,7 @@ namespace CapaNegocio
         public List<ProfesorCE> Listar()
         {
             ProfesorCD profesorCD = new ProfesorCD();
-            List<ProfesorCE> profesorCEs = profesorCD.ListarProfesores();
+            List<ProfesorCE> profesorCEs = profesorCD.Listar();
 
             return profesorCEs;
 
