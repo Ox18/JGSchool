@@ -1,3 +1,11 @@
 # JGSchool Documentación
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+**¿Qué es?**
+
+> Es un gestor de datos y registros de colegio. Permite asignar notas de
+> evaluaciones y mostrar el promedio de ellas. Incluye una sección para
+> poder gestionar al personal docente como alumnado.
+
+**¿Qué tecnologías han sido usadas?**
+
+> C# - SQLServer
