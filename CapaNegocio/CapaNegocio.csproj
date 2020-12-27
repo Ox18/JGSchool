@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CursoCN.cs" />
+    <Compile Include="EvaluacionCN.cs" />
     <Compile Include="ProfesorCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

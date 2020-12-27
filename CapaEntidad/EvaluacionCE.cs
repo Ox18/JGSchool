@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    class EvaluacionCE
+    public class EvaluacionCE
     {
         private int id;
         private string descripcion;

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ConexionCD.cs" />
     <Compile Include="CursoCD.cs" />
+    <Compile Include="EvaluacionCD.cs" />
     <Compile Include="ProfesorCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
