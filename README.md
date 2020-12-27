@@ -9,3 +9,13 @@
 **¿Qué tecnologías han sido usadas?**
 
 > C# - SQLServer
+
+**Recursos:**
+
+>  - **Base de datos:** 	 
+>  [JGSchoolBD](https://github.com/alexwathever/JGSchool/blob/master/Document/BD/JGSchoolBD.sql)
+> 	 
+>  - **Diagrama de clase:**
+> 
+> ![Diagrama](https://github.com/alexwathever/JGSchool/blob/master/Document/Diagram/Main.png)
+
