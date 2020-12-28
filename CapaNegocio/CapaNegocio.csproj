@@ -46,6 +46,7 @@
     <Compile Include="EvaluacionCN.cs" />
     <Compile Include="ProfesorCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroCN.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    class RegistroCE
+    public class RegistroCE
     {
         private int id;
         private int idProfesor;
