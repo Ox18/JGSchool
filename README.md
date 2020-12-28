@@ -24,3 +24,8 @@
 > 
 > ![Diagrama](https://github.com/alexwathever/JGSchool/blob/master/Document/Diagram/Main.png)
 
+**Documentación de métodos:**
+
+> - **Inicio:**
+> [Click aquí](https://github.com/alexwathever/JGSchool/wiki/Inicio)
+
