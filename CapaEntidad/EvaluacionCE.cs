@@ -11,6 +11,8 @@ namespace CapaEntidad
         private int id;
         private string descripcion;
 
+        public EvaluacionCE() { }
+
         public EvaluacionCE(int id, string descripcion)
         {
             this.Id = id;
