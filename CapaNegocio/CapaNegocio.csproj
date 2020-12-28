@@ -44,6 +44,7 @@
     <Compile Include="CursoCN.cs" />
     <Compile Include="EstudianteCN.cs" />
     <Compile Include="EvaluacionCN.cs" />
+    <Compile Include="NotasCN.cs" />
     <Compile Include="ProfesorCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroCN.cs" />
