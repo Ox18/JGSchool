@@ -12,9 +12,9 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class ProfesorPanel : Form
+    public partial class ProfesorCP : Form
     {
-        public ProfesorPanel()
+        public ProfesorCP()
         {
             InitializeComponent();
         }

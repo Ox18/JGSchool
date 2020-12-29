@@ -63,7 +63,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(201, 18);
             this.label8.TabIndex = 59;
-            this.label8.Text = "ADMINISTRAR PROFESORES";
+            this.label8.Text = "ADMINISTRAR ESTUDIANTES";
             // 
             // btnEliminar
             // 
@@ -110,6 +110,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(374, 20);
             this.txtBuscar.TabIndex = 54;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // btnAgregar
             // 
@@ -142,6 +143,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(157, 20);
             this.txtTelefono.TabIndex = 50;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtDNI
             // 
@@ -150,6 +152,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(157, 20);
             this.txtDNI.TabIndex = 49;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // txtNombre
             // 
@@ -157,6 +160,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(157, 20);
             this.txtNombre.TabIndex = 48;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtId
             // 
@@ -236,6 +240,7 @@
             // lstNivel
             // 
             this.lstNivel.DisplayMember = "0";
+            this.lstNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstNivel.FormattingEnabled = true;
             this.lstNivel.Items.AddRange(new object[] {
             "Primaria",
@@ -249,6 +254,7 @@
             // 
             // lstGrado
             // 
+            this.lstGrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstGrado.FormattingEnabled = true;
             this.lstGrado.Location = new System.Drawing.Point(351, 274);
             this.lstGrado.Name = "lstGrado";

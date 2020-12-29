@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class ProfesorPanel
+    partial class ProfesorCP
     {
         /// <summary>
         /// Variable del diseñador necesaria.

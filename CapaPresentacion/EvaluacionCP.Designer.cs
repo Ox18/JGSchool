@@ -38,13 +38,14 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 32);
+            this.label1.Location = new System.Drawing.Point(35, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 71);
+            this.label2.Location = new System.Drawing.Point(35, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -61,7 +62,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(406, 22);
+            this.btnCrear.Location = new System.Drawing.Point(411, 44);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(406, 51);
+            this.btnActualizar.Location = new System.Drawing.Point(411, 73);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(406, 80);
+            this.btnEliminar.Location = new System.Drawing.Point(411, 102);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 4;
@@ -101,6 +102,7 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Location = new System.Drawing.Point(33, 183);
             this.dgvDatos.Name = "dgvDatos";
@@ -118,7 +120,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(104, 29);
+            this.txtId.Location = new System.Drawing.Point(109, 51);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(41, 20);
@@ -127,16 +129,27 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(104, 68);
+            this.txtDescripcion.Location = new System.Drawing.Point(109, 90);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(178, 20);
             this.txtDescripcion.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(30, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(224, 18);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "ADMINISTRAR EVALUACIONES";
             // 
             // EvaluacionCP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 345);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtBuscar);
@@ -168,5 +181,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label8;
     }
 }

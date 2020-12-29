@@ -177,5 +177,102 @@ namespace CapaPresentacion
                 MessageBox.Show("No podemos actualizar con datos nulos o inexistentes.");
             }
         }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Capturar letra introducida
+            char letra = e.KeyChar;
+            // Verificar si es:
+            // Letra
+            // Si es backspace
+            // Si es spacebar
+            // Si es "."
+            bool verificar = char.IsLetter(letra) || char.IsControl(letra) || char.IsWhiteSpace(letra) || letra == '.';
+
+
+            if (verificar)
+            {
+                // Si cumple los requisitos deja introducir la letra
+                e.Handled = false;
+            }
+            else
+            {
+                // Si no, no introduzcas la letra
+                e.Handled = true;
+            }
+            // Cambia la letra a mayuscula
+            e.KeyChar = char.ToUpper(letra);
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Capturar letra
+            char letra = e.KeyChar;
+
+            // Verificar si es:
+            // Numero
+            // Si es backspace
+            bool verificar = char.IsNumber(letra) || char.IsControl(letra);
+
+            if (verificar)
+            {
+                // Si cumple los requisitos deja introducir la letra
+                e.Handled = false;
+            }
+            else
+            {
+                // Si no, no introduzcas la letra
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Capturar letra
+            char letra = e.KeyChar;
+
+            // Verificar si es:
+            // Numero
+            // Si es backspace
+
+            bool verificar = char.IsNumber(letra) || char.IsControl(letra);
+
+            if (verificar)
+            {
+                // Si cumple los requisitos deja introducir la letra
+                e.Handled = false;
+            }
+            else
+            {
+                // Si no, no introduzcas la letra
+                e.Handled = true;
+            }
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Capturar letra introducida
+            char letra = e.KeyChar;
+            // Verificar si es:
+            // Letra
+            // Si es backspace
+            // Si es spacebar
+            // Si es "."
+            bool verificar = char.IsLetter(letra) || char.IsControl(letra) || char.IsWhiteSpace(letra) || letra == '.';
+
+
+            if (verificar)
+            {
+                // Si cumple los requisitos deja introducir la letra
+                e.Handled = false;
+            }
+            else
+            {
+                // Si no, no introduzcas la letra
+                e.Handled = true;
+            }
+            // Cambia la letra a mayuscula
+            e.KeyChar = char.ToUpper(letra);
+        }
     }
 }

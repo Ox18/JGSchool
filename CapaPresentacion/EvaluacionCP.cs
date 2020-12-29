@@ -129,6 +129,10 @@ namespace CapaPresentacion
                 EvaluacionCN evaluacionCN = new EvaluacionCN();
                 int numFil = evaluacionCN.Eliminar(evaluacionCE);
                 MessageBox.Show(numFil + " Filas afectadas");
+                if (numFil > 0)
+                {
+                    Limpiar();
+                }
             }
             else
             {

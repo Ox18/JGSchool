@@ -70,11 +70,11 @@
     <Compile Include="PrincipalCP.Designer.cs">
       <DependentUpon>PrincipalCP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfesorPanel.cs">
+    <Compile Include="ProfesorCP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfesorPanel.Designer.cs">
-      <DependentUpon>ProfesorPanel.cs</DependentUpon>
+    <Compile Include="ProfesorCP.Designer.cs">
+      <DependentUpon>ProfesorCP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,8 +96,8 @@
     <EmbeddedResource Include="PrincipalCP.resx">
       <DependentUpon>PrincipalCP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfesorPanel.resx">
-      <DependentUpon>ProfesorPanel.cs</DependentUpon>
+    <EmbeddedResource Include="ProfesorCP.resx">
+      <DependentUpon>ProfesorCP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
