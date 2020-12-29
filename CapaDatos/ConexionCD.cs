@@ -17,16 +17,18 @@ namespace CapaDatos
             // Complementar las propiedades
 
             // Punto de direccion
-            generadorCadena.DataSource = @"DESKTOP-BKHUJQ5\SQLEXPRESS";
+            generadorCadena.DataSource = "localhost";
 
             // Nombre de base de datos
-            generadorCadena.InitialCatalog = "JGSchool";
+            generadorCadena.InitialCatalog = "BD_FINAL_MACURI";
 
             // Autenticacion de windows
             generadorCadena.IntegratedSecurity = true;
 
+
             // Recoger la cadena de conexion
             string cadenaConexion = generadorCadena.ConnectionString;
+
 
             // Instanciar conexion a base de datos
             SqlConnection sqlConnection = new SqlConnection(cadenaConexion);
