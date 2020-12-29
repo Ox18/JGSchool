@@ -137,5 +137,10 @@ namespace CapaPresentacion
             
             
         }
+
+        private void EvaluacionCP_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

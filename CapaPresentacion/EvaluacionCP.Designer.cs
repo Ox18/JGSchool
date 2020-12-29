@@ -149,6 +149,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EvaluacionCP";
             this.Text = "EvaluaciónCP";
+            this.Load += new System.EventHandler(this.EvaluacionCP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

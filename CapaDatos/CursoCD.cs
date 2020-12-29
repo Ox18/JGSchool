@@ -20,7 +20,7 @@ namespace CapaDatos
             cn.Open();
 
             // Crear comando
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = cn.CreateCommand();
 
             // Definir tipo de comando
             cmd.CommandType = CommandType.Text;
@@ -82,13 +82,13 @@ namespace CapaDatos
             cn.Open();
 
             // Crear comando
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = cn.CreateCommand();
 
-            // Definir tipo de comando
+            // Definir el tipo de comando
             cmd.CommandType = CommandType.Text;
 
             // Asignar consulta SQL
-            cmd.CommandText = "SELECT * FROM Curso";
+            cmd.CommandText = "select * from curso";
 
             // Ejecutar comando
             SqlDataReader dataReader = cmd.ExecuteReader();

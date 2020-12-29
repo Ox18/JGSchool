@@ -8,7 +8,7 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    class CursoCN
+    public class CursoCN
     {
         // Crear curso
         public int Crear(CursoCE cursoCE) {
