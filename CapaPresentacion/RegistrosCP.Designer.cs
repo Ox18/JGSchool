@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class NotasCP
+    partial class RegistrosCP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // RegistrosCP
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "NotasCP";
+            this.ClientSize = new System.Drawing.Size(344, 340);
+            this.Name = "RegistrosCP";
+            this.Text = "RegistrosCP";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

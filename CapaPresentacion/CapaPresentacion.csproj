@@ -64,12 +64,6 @@
     <Compile Include="EvaluacionCP.Designer.cs">
       <DependentUpon>EvaluacionCP.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotasCP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotasCP.Designer.cs">
-      <DependentUpon>NotasCP.cs</DependentUpon>
-    </Compile>
     <Compile Include="PrincipalCP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,14 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroCP.cs">
+    <Compile Include="RegistrosCP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroCP.Designer.cs">
-      <DependentUpon>RegistroCP.cs</DependentUpon>
+    <Compile Include="RegistrosCP.Designer.cs">
+      <DependentUpon>RegistrosCP.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CursoCP.resx">
       <DependentUpon>CursoCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluacionCP.resx">
+      <DependentUpon>EvaluacionCP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalCP.resx">
       <DependentUpon>PrincipalCP.cs</DependentUpon>
@@ -108,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistrosCP.resx">
+      <DependentUpon>RegistrosCP.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

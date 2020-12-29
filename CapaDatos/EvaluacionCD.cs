@@ -204,6 +204,9 @@ namespace CapaDatos
             cmd.CommandText = "Select * from Evaluacion" +
                 " where descripcion like '%' + @descripcion + '%'";
 
+            // Definimos el parametro
+            cmd.Parameters.AddWithValue("@descripcion", nombreBuscar);
+
             // ejecutamos la consulta
             SqlDataReader dataReader = cmd.ExecuteReader();
 
