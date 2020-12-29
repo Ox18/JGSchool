@@ -46,16 +46,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProfesoresPanel.cs">
+    <Compile Include="CursoCP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfesoresPanel.Designer.cs">
-      <DependentUpon>ProfesoresPanel.cs</DependentUpon>
+    <Compile Include="CursoCP.Designer.cs">
+      <DependentUpon>CursoCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstudianteCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstudianteCP.Designer.cs">
+      <DependentUpon>EstudianteCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluacionCP.Designer.cs">
+      <DependentUpon>EvaluacionCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotasCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotasCP.Designer.cs">
+      <DependentUpon>NotasCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalCP.Designer.cs">
+      <DependentUpon>PrincipalCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfesorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesorPanel.Designer.cs">
+      <DependentUpon>ProfesorPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ProfesoresPanel.resx">
-      <DependentUpon>ProfesoresPanel.cs</DependentUpon>
+    <Compile Include="RegistroCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCP.Designer.cs">
+      <DependentUpon>RegistroCP.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CursoCP.resx">
+      <DependentUpon>CursoCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfesorPanel.resx">
+      <DependentUpon>ProfesorPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
