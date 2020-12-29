@@ -52,6 +52,7 @@ CREATE TABLE Notas(
 id int identity(1,1),
 idEstudiante int,
 idEvaluacion int,
+idRegistro int,
 nota float,
 constraint pk6 primary key(id)
 );
@@ -69,3 +70,6 @@ ADD FOREIGN KEY (idEstudiante) REFERENCES Estudiante(id);
 
 ALTER TABLE Notas
 ADD FOREIGN KEY (idEvaluacion) REFERENCES Evaluacion(id);
+
+ALTER TABLE Notas
+ADD FOREIGN KEY (idRegistro) REFERENCES Registro(id);
