@@ -29,13 +29,14 @@ namespace CapaDatos
 
             // Definir consulta
             cmd.CommandText = "insert Notas " +
-                "into (idEstudiante, idEvaluacion, nota) " +
-                "values (@idEstudiante, @idEvaluacion, @nota)";
+                "into (idEstudiante, idEvaluacion, nota, idRegistro) " +
+                "values (@idEstudiante, @idEvaluacion, @nota, @idRegistro)";
 
             // Agregar parametros
             cmd.Parameters.AddWithValue("@idEstudiante", notasCE.IdEstudiante);
             cmd.Parameters.AddWithValue("@idEvaluacion", notasCE.IdEvaluacion);
             cmd.Parameters.AddWithValue("@nota", notasCE.Nota);
+            cmd.Parameters.AddWithValue("@idRegistro", notasCE.IdRegistro);
 
             // Ejecutar comando
             int numFila = cmd.ExecuteNonQuery();
@@ -102,8 +103,9 @@ namespace CapaDatos
                 int idEstudiante = Convert.ToInt32(dataReader["idEstudiante"]);
                 int idEvaluacion = Convert.ToInt32(dataReader["idEvaluacion"]);
                 double nota = Convert.ToDouble(dataReader["nota"]);
+                int idRegistro = Convert.ToInt32(dataReader["idRegistro"]);
 
-                NotasCE notasCE = new NotasCE(id, idEstudiante, idEvaluacion, nota);
+                NotasCE notasCE = new NotasCE(id, idEstudiante, idEvaluacion, idRegistro, nota);
 
                 notasCEs.Add(notasCE);
             }
@@ -131,7 +133,7 @@ namespace CapaDatos
 
             // Definir consulta
             cmd.CommandText = "Update Notas" +
-                " set idEstudiante = @idEstudiante, idEvaluacion = @idEvaluacion, nota = @nota " +
+                " set idEstudiante = @idEstudiante, idEvaluacion = @idEvaluacion, nota = @nota, idRegistr = @idRegistro " +
                 "where id = @id";
 
             // Agregar parametros
@@ -139,6 +141,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@idEvaluacion", notasCE.IdEvaluacion);
             cmd.Parameters.AddWithValue("@nota", notasCE.Nota);
             cmd.Parameters.AddWithValue("@id", notasCE.Id);
+            cmd.Parameters.AddWithValue("@idRegistro", notasCE.IdRegistro);
 
             // Ejecutar comando
             int numFila = cmd.ExecuteNonQuery();
