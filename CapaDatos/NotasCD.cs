@@ -46,7 +46,7 @@ namespace CapaDatos
 
             if (numFila > 0)
             {
-                cmd.CommandText = "select max(id) as nuevoId from Notas where idEstudiante = @nota";
+                cmd.CommandText = "select max(id) as nuevoId from Notas where nota = @nota";
                 cmd.Parameters["@nota"].Value = notasCE.Nota;
 
                 // ejecutar consulta
@@ -133,7 +133,7 @@ namespace CapaDatos
 
             // Definir consulta
             cmd.CommandText = "Update Notas" +
-                " set idEstudiante = @idEstudiante, idEvaluacion = @idEvaluacion, nota = @nota, idRegistr = @idRegistro " +
+                " set idEstudiante = @idEstudiante, idEvaluacion = @idEvaluacion, nota = @nota, idRegistro = @idRegistro " +
                 "where id = @id";
 
             // Agregar parametros
