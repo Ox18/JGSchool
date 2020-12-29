@@ -108,12 +108,12 @@ namespace CapaDatos
             {
                 int id = Convert.ToInt32(dataReader["id"]);
                 string nombre = dataReader["nombre"].ToString();
-                int dni = (int)dataReader["dni"];
-                DateTime fechaNac = (DateTime)dataReader["fechaNac"];
-                int telefono = (int)dataReader["telefono"];
-                string correo = (string)dataReader["correo"];
-                string nivel = (string)dataReader["nivel"];
-                int grado = (int)dataReader["grado"];
+                int dni = Convert.ToInt32(dataReader["dni"]);
+                DateTime fechaNac = Convert.ToDateTime(dataReader["fechaNac"]);
+                int telefono = Convert.ToInt32(dataReader["telefono"]);
+                string correo = dataReader["correo"].ToString();
+                string nivel = dataReader["nivel"].ToString();
+                int grado = Convert.ToInt32(dataReader["grado"]);
 
                 EstudianteCE estudianteCE = new EstudianteCE(id, nombre, dni, fechaNac, telefono, correo, nivel, grado);
 
@@ -231,12 +231,12 @@ namespace CapaDatos
             {
                 int id = Convert.ToInt32(dataReader["id"]);
                 string nombre = dataReader["nombre"].ToString();
-                int dni = (int)dataReader["dni"];
-                DateTime fechaNac = (DateTime)dataReader["fechaNac"];
-                int telefono = (int)dataReader["telefono"];
-                string correo = (string)dataReader["correo"];
-                string nivel = (string)dataReader["nivel"];
-                int grado = (int)dataReader["grado"];
+                int dni = Convert.ToInt32(dataReader["dni"]);
+                DateTime fechaNac = Convert.ToDateTime(dataReader["fechaNac"]);
+                int telefono = Convert.ToInt32(dataReader["telefono"]);
+                string correo = dataReader["correo"].ToString();
+                string nivel = dataReader["nivel"].ToString();
+                int grado = Convert.ToInt32(dataReader["grado"]);
 
                 EstudianteCE estudianteCE = new EstudianteCE(id, nombre, dni, fechaNac, telefono, correo, nivel, grado);
 

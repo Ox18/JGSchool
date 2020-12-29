@@ -1809,6 +1809,24 @@
 											"height": 13,
 											"text": "+nota: double",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF2q345SFHZqF8=",
+											"_parent": {
+												"$ref": "AAAAAAF2oSGy8UGhj30="
+											},
+											"model": {
+												"$ref": "AAAAAAF2q344BlHW5J8="
+											},
+											"fillColor": "#d8f2ff",
+											"font": "Arial;13;0",
+											"left": 269,
+											"top": 442,
+											"width": 102.2607421875,
+											"height": 13,
+											"text": "+idRegistro: int",
+											"horizontalAlignment": 0
 										}
 									],
 									"fillColor": "#d8f2ff",
@@ -1816,7 +1834,7 @@
 									"left": 264,
 									"top": 377,
 									"width": 112.2607421875,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1927,7 +1945,7 @@
 									"fillColor": "#d8f2ff",
 									"font": "Arial;13;0",
 									"left": 264,
-									"top": 445,
+									"top": 460,
 									"width": 112.2607421875,
 									"height": 10
 								},
@@ -1972,7 +1990,7 @@
 							"left": 264,
 							"top": 352,
 							"width": 112.2607421875,
-							"height": 103,
+							"height": 118,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2oSGy8UGcvRo="
 							},
@@ -3913,6 +3931,15 @@
 							},
 							"name": "nota",
 							"type": "double"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF2q344BlHW5J8=",
+							"_parent": {
+								"$ref": "AAAAAAF2oSGy8EGZI34="
+							},
+							"name": "idRegistro",
+							"type": "int"
 						}
 					],
 					"operations": [

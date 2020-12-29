@@ -53,7 +53,7 @@ namespace CapaDatos
 
                 if (dataReader.Read())
                 {
-                    nuevoID = (int)dataReader["nuevoId"];
+                    nuevoID = Convert.ToInt32(dataReader["nuevoId"]);
                 }
                 else
                 {
@@ -98,10 +98,10 @@ namespace CapaDatos
 
             while (dataReader.Read())
             {
-                int id = (int)dataReader["id"];
-                int idEstudiante = (int)dataReader["idEstudiante"];
-                int idEvaluacion = (int)dataReader["idEvaluacion"];
-                double nota = (double)dataReader["nota"];
+                int id = Convert.ToInt32(dataReader["id"]);
+                int idEstudiante = Convert.ToInt32(dataReader["idEstudiante"]);
+                int idEvaluacion = Convert.ToInt32(dataReader["idEvaluacion"]);
+                double nota = Convert.ToDouble(dataReader["nota"]);
 
                 NotasCE notasCE = new NotasCE(id, idEstudiante, idEvaluacion, nota);
 

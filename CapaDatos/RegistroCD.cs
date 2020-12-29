@@ -60,7 +60,7 @@ namespace CapaDatos
                 // Leer reader
                 if (dataReader.Read())
                 {
-                    nuevoID = (int)dataReader["nuevoId"];
+                    nuevoID = Convert.ToInt32(dataReader["nuevoId"]);
                 }
                 else
                 {
@@ -106,11 +106,11 @@ namespace CapaDatos
             // Rellenar registros
             while (dataReader.Read())
             {
-                int id = (int)dataReader["id"];
-                int idProfesor = (int)dataReader["idProfesor"];
-                int idCurso = (int)dataReader["idCurso"];
-                DateTime fechaInicio = (DateTime)dataReader["fechaInicio"];
-                DateTime fechaTermino = (DateTime)dataReader["fechaTermino"];
+                int id = Convert.ToInt32(dataReader["id"]);
+                int idProfesor = Convert.ToInt32(dataReader["idProfesor"]);
+                int idCurso = Convert.ToInt32(dataReader["idCurso"]);
+                DateTime fechaInicio = Convert.ToDateTime(dataReader["fechaInicio"]);
+                DateTime fechaTermino = Convert.ToDateTime(dataReader["fechaTermino"]);
 
                 // instanciar objeto
                 RegistroCE registroCE = new RegistroCE(id, idProfesor, idCurso, fechaInicio, fechaTermino);
