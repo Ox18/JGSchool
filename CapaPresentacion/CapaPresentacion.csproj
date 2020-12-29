@@ -87,6 +87,9 @@
     <EmbeddedResource Include="CursoCP.resx">
       <DependentUpon>CursoCP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EstudianteCP.resx">
+      <DependentUpon>EstudianteCP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EvaluacionCP.resx">
       <DependentUpon>EvaluacionCP.cs</DependentUpon>
     </EmbeddedResource>

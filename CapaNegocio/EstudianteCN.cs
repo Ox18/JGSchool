@@ -8,7 +8,7 @@ using CapaEntidad;
 
 namespace CapaNegocio
 {
-    class EstudianteCN
+   public class EstudianteCN
     {
         // crear
         public int Crear(EstudianteCE estudianteCE)

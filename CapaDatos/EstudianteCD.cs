@@ -143,9 +143,9 @@ namespace CapaDatos
             cmd.CommandType = CommandType.Text;
 
             // Establecer consulta
-            cmd.CommandText = "update Estudiante set" +
+            cmd.CommandText = "update Estudiante set " +
                 "nombre = @nombre, dni = @dni, fechaNac = @fechaNac, telefono = @telefono, correo = @correo, nivel = @nivel, grado = @grado" +
-                "where id = @id";
+                " where id = @id";
 
             // Agregar los parametros
             cmd.Parameters.AddWithValue("@nombre", estudianteCE.Nombre);
