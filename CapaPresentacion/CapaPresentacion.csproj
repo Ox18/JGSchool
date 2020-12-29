@@ -93,6 +93,9 @@
     <EmbeddedResource Include="CursoCP.resx">
       <DependentUpon>CursoCP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalCP.resx">
+      <DependentUpon>PrincipalCP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfesorPanel.resx">
       <DependentUpon>ProfesorPanel.cs</DependentUpon>
     </EmbeddedResource>
