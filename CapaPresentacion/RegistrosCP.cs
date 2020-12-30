@@ -231,18 +231,64 @@ namespace CapaPresentacion
         {
             if (dgvDatos.Rows.Count > 0)
             {
-                DialogResult rpta = MessageBox.Show("Está a punto de GUARDAR los REGISTROS y sus detalles. ¿Está seguro?",
-                "Registros", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                if (rpta == DialogResult.Yes)
+                if (txtIdProfesor.Text.Length > 0 && txtProfesor.Text.Length > 0
+                   && txtIdCurso.Text.Length > 0 &&  txtCurso.Text.Length > 0
+                   && txtIdEstudiante.Text.Length > 0 && txtEstudiante.Text.Length > 0)
                 {
+                    DialogResult rpta = MessageBox.Show("Está a punto de GUARDAR los REGISTROS y sus detalles. ¿Está seguro?",
+                "Registros", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    if (rpta == DialogResult.Yes)
+                    {
+                        int idProfesor = Convert.ToInt32(txtIdProfesor.Text);
+                        int idCurso = Convert.ToInt32(txtIdCurso.Text);
+                        DateTime fechaInicio = dtpFInicio.Value;
+                        DateTime fechaTermino = dtpFTermino.Value;
 
+                        foreach (DataGridViewRow fila in dgvDatos.Rows)
+                        {
+                            RegistroCE registroCE = new RegistroCE(0, idProfesor, idCurso, fechaInicio, fechaTermino);
+                            RegistroCN registroCN = new RegistroCN();
 
+                            int idRegistro = registroCN.Crear(registroCE);
+
+                            int idEstudiante = Convert.ToInt32(fila.Cells["idEstudiante"].Value);
+                            int idEvaluacion = Convert.ToInt32(fila.Cells["idEvaluacion"].Value);
+                            double nota = Convert.ToDouble(fila.Cells["nota"].Value);
+
+                            NotasCE notasCE = new NotasCE(0, idEstudiante, idEvaluacion, idRegistro, nota);
+                            NotasCN notasCN = new NotasCN();
+
+                            int idNotas = notasCN.Crear(notasCE);
+
+                            Console.WriteLine("Registro guardado => " + idRegistro + " / " + idNotas);
+                        }
+                        LimpiarTodo();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Al parecer hay ciertos datos incompletos. Por favor, completelo para guardar los registros.");
+                }
+                
             }
             else
             {
                 MessageBox.Show("No hay registros introducidos.");
             }
+        }
+        private void LimpiarGrid()
+        {
+            dgvDatos.DataSource = "";
+        }
+        private void LimpiarInformacion()
+        {
+            txtIdEstudiante.Text = "";
+            txtEstudiante.Text = "";
+        }
+        private void LimpiarTodo()
+        {
+            LimpiarGrid();
+            LimpiarInformacion();
         }
     }
 }
