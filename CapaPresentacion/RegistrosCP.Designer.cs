@@ -112,6 +112,9 @@
             this.txtIdProfesor.Name = "txtIdProfesor";
             this.txtIdProfesor.Size = new System.Drawing.Size(54, 20);
             this.txtIdProfesor.TabIndex = 7;
+            this.txtIdProfesor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdProfesor_KeyDown);
+            this.txtIdProfesor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdProfesor_KeyPress);
+            this.txtIdProfesor.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtIdProfesor_PreviewKeyDown);
             // 
             // txtIdCurso
             // 
@@ -119,6 +122,8 @@
             this.txtIdCurso.Name = "txtIdCurso";
             this.txtIdCurso.Size = new System.Drawing.Size(54, 20);
             this.txtIdCurso.TabIndex = 8;
+            this.txtIdCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdCurso_KeyPress);
+            this.txtIdCurso.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtIdCurso_PreviewKeyDown);
             // 
             // btnBuscarProfesor
             // 
@@ -156,6 +161,8 @@
             this.txtIdEstudiante.Name = "txtIdEstudiante";
             this.txtIdEstudiante.Size = new System.Drawing.Size(54, 20);
             this.txtIdEstudiante.TabIndex = 12;
+            this.txtIdEstudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdEstudiante_KeyPress);
+            this.txtIdEstudiante.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtIdEstudiante_PreviewKeyDown);
             // 
             // label5
             // 
@@ -220,9 +227,13 @@
             // txtNota
             // 
             this.txtNota.Location = new System.Drawing.Point(688, 135);
+            this.txtNota.MaxLength = 2;
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(65, 20);
             this.txtNota.TabIndex = 20;
+            this.txtNota.Text = "0";
+            this.txtNota.TextChanged += new System.EventHandler(this.txtNota_TextChanged);
+            this.txtNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota_KeyPress);
             // 
             // btnAgregar
             // 
@@ -232,6 +243,7 @@
             this.btnAgregar.TabIndex = 21;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvDatos
             // 
@@ -266,6 +278,7 @@
             this.btnGuardarRegistro.TabIndex = 25;
             this.btnGuardarRegistro.Text = "GUARDAR REGISTRO";
             this.btnGuardarRegistro.UseVisualStyleBackColor = true;
+            this.btnGuardarRegistro.Click += new System.EventHandler(this.btnGuardarRegistro_Click);
             // 
             // RegistrosCP
             // 
