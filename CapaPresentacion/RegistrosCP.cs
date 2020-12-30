@@ -42,7 +42,8 @@ namespace CapaPresentacion
             CursoCN cursoCN = new CursoCN();
 
             int idBuscado = Convert.ToInt32(txtIdCurso.Text);
-            MessageBox.Show(idBuscado.ToString());
+            CursoCE cursoCE = cursoCN.LeerId(idBuscado);
+            txtCurso.Text = cursoCE.Nombre;
         }
 
         private void btnBuscarEstudiante_Click(object sender, EventArgs e)

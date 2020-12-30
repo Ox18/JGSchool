@@ -278,7 +278,7 @@ namespace CapaDatos
             // Asignamos los valores a un objeto
             CursoCE cursoCE = new CursoCE(id, nombre);
 
-            // Retornar el profesor
+            // Retornar el objeto
             return cursoCE;
         }
     }

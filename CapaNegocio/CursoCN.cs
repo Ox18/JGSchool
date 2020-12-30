@@ -70,8 +70,8 @@ namespace CapaNegocio
         // Busqueda por id
         public CursoCE LeerId(int idBuscado)
         {
-            CursoCN cursoCN = new CursoCN();
-            CursoCE cursoCE = cursoCN.LeerId(idBuscado);
+            CursoCD cursoCD = new CursoCD();
+            CursoCE cursoCE = cursoCD.LeerId(idBuscado);
             return cursoCE;
         }
     }
