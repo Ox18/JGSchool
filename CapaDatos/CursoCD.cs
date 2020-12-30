@@ -229,5 +229,57 @@ namespace CapaDatos
             // Retornar lista
             return cursoCEs;
         }
+
+        // Leer Id
+        public CursoCE LeerId(int idBuscado)
+        {
+            // Crear la conexion
+            SqlConnection connection = ConexionCD.conectarBD();
+
+            // Abrir la conexion
+            connection.Open();
+
+            // Crear comando
+            SqlCommand command = connection.CreateCommand();
+
+            // Definir tipo de comando
+            command.CommandType = CommandType.Text;
+
+            // Asignar Consulta SQL
+            command.CommandText = "select * from Curso " +
+                "where id = @id";
+
+            // Asignar valor al parametro
+            command.Parameters.AddWithValue("@id", idBuscado);
+
+            // Ejecutar comando / select
+            SqlDataReader dataReader = command.ExecuteReader();
+
+            // Declarar variables para los datos;
+            int id;
+            string nombre;
+
+            if (dataReader.Read())
+            {
+                // Si la fila existe
+                id = Convert.ToInt32(dataReader["id"]);
+                nombre = dataReader["nombre"].ToString();
+
+            }
+            else
+            {
+                // Si la fila no existe
+                id = 0;
+                nombre = "";
+            }
+            // Cerramos la conexion
+            connection.Close();
+
+            // Asignamos los valores a un objeto
+            CursoCE cursoCE = new CursoCE(id, nombre);
+
+            // Retornar el profesor
+            return cursoCE;
+        }
     }
 }

@@ -249,6 +249,73 @@ namespace CapaDatos
             // retornamos lista
             return estudianteCEs;
         }
+        public EstudianteCE BusquedaId(int idBuscado)
+        {
+            // Crear la conexion
+            SqlConnection connection = ConexionCD.conectarBD();
 
+            // Abrir la conexion
+            connection.Open();
+
+            // Crear comando
+            SqlCommand command = connection.CreateCommand();
+
+            // Definir tipo de comando
+            command.CommandType = CommandType.Text;
+
+            // Asignar Consulta SQL
+            command.CommandText = "SELECT * FROM Estudiante " +
+                "WHERE id = @id";
+
+            // Asignar valor al parametro
+            command.Parameters.AddWithValue("@id", idBuscado);
+
+            // Ejecutar comando / select
+            SqlDataReader dataReader = command.ExecuteReader();
+
+            // Declarar variables para los datos;
+            int id;
+            string nombre;
+            int dni;
+            DateTime fechaNac;
+            int telefono;
+            string correo;
+            string nivel;
+            int grado;
+
+            if (dataReader.Read())
+            {
+                // Si la fila existe
+                id = Convert.ToInt32(dataReader["id"]);
+                nombre = dataReader["nombre"].ToString();
+                dni = Convert.ToInt32(dataReader["dni"]);
+                fechaNac = Convert.ToDateTime(dataReader["fechaNac"]);
+                telefono = Convert.ToInt32(dataReader["telefono"]);
+                correo = dataReader["correo"].ToString();
+                nivel = dataReader["nivel"].ToString();
+                grado = Convert.ToInt32(dataReader["grado"]);
+
+            }
+            else
+            {
+                // Si la fila no existe
+                id = 0;
+                nombre = "";
+                dni = 0;
+                fechaNac = DateTime.Now;
+                telefono = 0;
+                correo = "";
+                nivel = "";
+                grado = 0;
+            }
+            // Cerramos la conexion
+            connection.Close();
+
+            // Asignamos los valores a un objeto
+            EstudianteCE estudianteCE = new EstudianteCE(id, nombre, dni, fechaNac, telefono, correo, nivel, grado);
+
+            // Retornar el profesor
+            return estudianteCE;
+        }
     }
 }

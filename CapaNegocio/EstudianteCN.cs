@@ -51,5 +51,13 @@ namespace CapaNegocio
             List<EstudianteCE> estudianteCEs = estudianteCD.BusquedaNombre(nombre);
             return estudianteCEs;
         }
+
+        // Busqueda ID
+        public EstudianteCE BusquedaId(int idBuscado)
+        {
+            EstudianteCD estudianteCD = new EstudianteCD();
+            EstudianteCE estudianteCE = estudianteCD.BusquedaId(idBuscado);
+            return estudianteCE;
+        }
     }
 }

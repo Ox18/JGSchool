@@ -66,5 +66,13 @@ namespace CapaNegocio
             // Retornamos nuestro resultado
             return cursoCEs;
         }
+
+        // Busqueda por id
+        public CursoCE LeerId(int idBuscado)
+        {
+            CursoCN cursoCN = new CursoCN();
+            CursoCE cursoCE = cursoCN.LeerId(idBuscado);
+            return cursoCE;
+        }
     }
 }
