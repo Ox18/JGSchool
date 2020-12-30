@@ -28,8 +28,8 @@ namespace CapaDatos
             cmd.CommandType = CommandType.Text;
 
             // Definir consulta
-            cmd.CommandText = "insert Notas " +
-                "into (idEstudiante, idEvaluacion, nota, idRegistro) " +
+            cmd.CommandText = "insert into Notas " +
+                "(idEstudiante, idEvaluacion, nota, idRegistro) " +
                 "values (@idEstudiante, @idEvaluacion, @nota, @idRegistro)";
 
             // Agregar parametros

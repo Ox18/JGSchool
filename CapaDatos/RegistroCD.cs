@@ -28,8 +28,8 @@ namespace CapaDatos
             cmd.CommandType = CommandType.Text;
 
             // Establecer la consulta
-            cmd.CommandText = "insert Registro " +
-                "into (idProfesor, idCurso, fechaInicio, fechaTermino) " +
+            cmd.CommandText = "insert into Registro " +
+                "(idProfesor, idCurso, fechaInicio, fechaTermino) " +
                 "values (@idProfesor, @idCurso, @fechaInicio, @fechaTermino)";
 
             // Agregar parametros
