@@ -7,54 +7,48 @@ CREATE DATABASE JGSchool;
 USE JGSchool;
 
 CREATE TABLE Profesor(
-id int identity(1,1),
-nombre varchar,
+id int identity(1,1) primary key,
+nombre varchar(255),
 dni int,
 fechaNac DateTime,
 telefono int,
-correo varchar
-constraint pk1 primary key(id)
+correo varchar(255)
 );
 
 CREATE TABLE Curso(
-id int identity(1,1),
-nombre varchar,
-constraint pk2 primary key(id)
+id int identity(1,1) primary key,
+nombre varchar(255)
 );
 CREATE TABLE Estudiante(
-id int identity(1,1),
-nombre varchar,
+id int identity(1,1) primary key,
+nombre varchar(255),
 dni int,
 fechaNac DateTime,
 telefono int,
-correo varchar,
-nivel varchar,
-grado int,
-constraint pk3 primary key(id)
+correo varchar(255),
+nivel varchar(80),
+grado int
 );
 
 CREATE TABLE Evaluacion(
-id int identity(1,1),
-descripcion varchar,
-constraint pk4 primary key(id)
+id int identity(1,1) primary key,
+descripcion varchar(255)
 );
 
 CREATE TABLE Registro(
-id int identity(1,1),
+id int identity(1,1) primary key,
 idProfesor int,
 idCurso int,
 fechaInicio DateTime,
-fechaTermino DateTime,
-constraint pk5 primary key(id)
+fechaTermino DateTime
 );
 
 CREATE TABLE Notas(
-id int identity(1,1),
+id int identity(1,1) primary key,
 idEstudiante int,
 idEvaluacion int,
 idRegistro int,
-nota float,
-constraint pk6 primary key(id)
+nota float
 );
 
 ALTER TABLE Registro

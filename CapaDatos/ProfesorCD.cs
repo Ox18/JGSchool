@@ -147,7 +147,7 @@ namespace CapaDatos
             command.Parameters.AddWithValue("@dni", profesorCE.Dni);
             command.Parameters.AddWithValue("@fechaNac", profesorCE.FechaNac.ToLocalTime());
             command.Parameters.AddWithValue("@telefono", profesorCE.Telefono);
-            command.Parameters.AddWithValue("@correo", profesorCE.Correo);
+            command.Parameters.AddWithValue("@correo", profesorCE.Correo.ToString());
 
 
             // Ejecutar comando / insert
