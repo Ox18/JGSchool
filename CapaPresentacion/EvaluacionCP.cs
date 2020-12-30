@@ -14,6 +14,19 @@ namespace CapaPresentacion
 {
     public partial class EvaluacionCP : Form
     {
+        // singleton
+        private static EvaluacionCP instancia = null;
+        public static EvaluacionCP Instancia
+        {
+            get
+            {
+                if ((instancia == null) || (instancia.IsDisposed))
+                {
+                    instancia = new EvaluacionCP();
+                }
+                return instancia;
+            }
+        }
         public EvaluacionCP()
         {
             InitializeComponent();

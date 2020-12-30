@@ -34,7 +34,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@descripcion", evaluacionCE.Descripcion);
 
             // Ejecutamos la consulta y extraemos la cantidad de filas afectadas
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // instanciamos el nuevo id sin valor
             int nuevoID;
@@ -143,7 +158,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@descripcion", evaluacionCE.Descripcion);
 
             // Ejecutamos la consulta
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // cerramos la conexion
             cn.Close();
@@ -175,7 +205,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", evaluacionCE.Id);
 
             // Ejecutamos la consulta
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // cerramos la conexion
             cn.Close();

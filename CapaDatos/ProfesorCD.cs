@@ -151,7 +151,22 @@ namespace CapaDatos
 
 
             // Ejecutar comando / insert
-            int numFilas = command.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = connection.BeginTransaction())
+            {
+                command.Transaction = transaction;
+                try
+                {
+                    numFilas = command.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Declarar variable nuevo ID
             int nuevoID;
@@ -221,8 +236,23 @@ namespace CapaDatos
 
 
             // Ejecutar comando / insert
-            int numFilas = command.ExecuteNonQuery();
-          
+            int numFilas;
+
+            using (SqlTransaction transaction = connection.BeginTransaction())
+            {
+                command.Transaction = transaction;
+                try
+                {
+                    numFilas = command.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
+
 
 
             // Cerramos la conexion

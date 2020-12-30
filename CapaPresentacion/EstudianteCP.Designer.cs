@@ -310,6 +310,7 @@
             this.Controls.Add(this.dgvDatos);
             this.Name = "EstudianteCP";
             this.Text = "EstudianteCP";
+            this.Load += new System.EventHandler(this.EstudianteCP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

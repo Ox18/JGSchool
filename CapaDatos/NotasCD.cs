@@ -39,12 +39,27 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@idRegistro", notasCE.IdRegistro);
 
             // Ejecutar comando
-            int numFila = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Crear id nuevo
             int nuevoID;
 
-            if (numFila > 0)
+            if (numFilas > 0)
             {
                 cmd.CommandText = "select max(id) as nuevoId from Notas where nota = @nota";
                 cmd.Parameters["@nota"].Value = notasCE.Nota;
@@ -144,14 +159,29 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@idRegistro", notasCE.IdRegistro);
 
             // Ejecutar comando
-            int numFila = cmd.ExecuteNonQuery();
+            int numFilas;
 
-            
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
+
+
             // Cerramos la conexion
             cn.Close();
 
             // Retornamos nuevo id
-            return numFila;
+            return numFilas;
         }
 
         // Eliminar
@@ -176,14 +206,29 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", notasCE.Id);
 
             // Ejecutar comando
-            int numFila = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
 
             // Cerramos la conexion
             cn.Close();
 
             // Retornamos nuevo id
-            return numFila;
+            return numFilas;
         }
     }
 }

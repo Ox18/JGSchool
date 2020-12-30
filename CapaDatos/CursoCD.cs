@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaEntidad;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace CapaDatos
 {
     public class CursoCD
@@ -33,10 +34,24 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@nombre", cursoCE.Nombre);
 
             // Ejecutar comando
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
 
-            // Declarar variable nuevo id
-            int nuevoID;
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
+             // Declarar variable nuevo id
+             int nuevoID;
 
             if (numFilas > 0)
             {
@@ -141,7 +156,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", cursoCE.Id);
 
             // Ejecutar parametro
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Cerramos la conexion
             cn.Close();
@@ -172,7 +202,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", cursoCE.Id);
 
             // Ejecutamos la consulta y la almacenamos en una variable de tipo entera
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Cerramos conexion
             cn.Close();

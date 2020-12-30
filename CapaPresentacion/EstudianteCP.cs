@@ -14,6 +14,19 @@ namespace CapaPresentacion
 {
     public partial class EstudianteCP : Form
     {
+        // singleton
+        private static EstudianteCP instancia = null;
+        public static EstudianteCP Instancia
+        {
+            get
+            {
+                if ((instancia == null) || (instancia.IsDisposed))
+                {
+                    instancia = new EstudianteCP();
+                }
+                return instancia;
+            }
+        }
         public EstudianteCP()
         {
             InitializeComponent();
@@ -273,6 +286,11 @@ namespace CapaPresentacion
             }
             // Cambia la letra a mayuscula
             e.KeyChar = char.ToUpper(letra);
+        }
+
+        private void EstudianteCP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

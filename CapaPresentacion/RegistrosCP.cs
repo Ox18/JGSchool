@@ -14,6 +14,19 @@ namespace CapaPresentacion
 {
     public partial class RegistrosCP : Form
     {
+        // singleton
+        private static RegistrosCP instancia = null;
+        public static RegistrosCP Instancia
+        {
+            get
+            {
+                if ((instancia == null) || (instancia.IsDisposed))
+                {
+                    instancia = new RegistrosCP();
+                }
+                return instancia;
+            }
+        }
         public RegistrosCP()
         {
             InitializeComponent();

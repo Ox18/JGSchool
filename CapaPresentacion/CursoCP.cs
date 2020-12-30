@@ -14,6 +14,19 @@ namespace CapaPresentacion
 {
     public partial class CursoCP : Form
     {
+        // singleton
+        private static CursoCP instancia = null;
+        public static CursoCP Instancia
+        {
+            get
+            {
+                if ((instancia == null) || (instancia.IsDisposed))
+                {
+                    instancia = new CursoCP();
+                }
+                return instancia;
+            }
+        }
         public CursoCP()
         {
             InitializeComponent();
@@ -136,6 +149,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("No se puede eliminar mientras los datos esten vacios o incompletos.");
             }
+        }
+
+        private void CursoCP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

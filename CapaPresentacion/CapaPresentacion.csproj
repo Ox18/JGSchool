@@ -107,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistrosCP.resx">
       <DependentUpon>RegistrosCP.cs</DependentUpon>
@@ -133,6 +134,24 @@
       <Project>{4ffa033f-201f-4a7c-bec4-6d9b93347e9a}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chesbrough-circle8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_stack_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_emoji_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

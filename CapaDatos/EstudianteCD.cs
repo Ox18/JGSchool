@@ -40,7 +40,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@grado", estudianteCE.Grado);
 
             // Ejecutamos la consulta
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Definimos el nuevo id
             int nuevoID;
@@ -158,7 +173,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", estudianteCE.Id);
 
             // Ejecutamos la consulta
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Cerramos la conexion
             cn.Close();
@@ -189,7 +219,22 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@id", estudianteCE.Id);
 
             // Ejecutamos la consulta
-            int numFilas = cmd.ExecuteNonQuery();
+            int numFilas;
+
+            using (SqlTransaction transaction = cn.BeginTransaction())
+            {
+                cmd.Transaction = transaction;
+                try
+                {
+                    numFilas = cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    numFilas = 0;
+                }
+            }
 
             // Cerramos la conexion
             cn.Close();

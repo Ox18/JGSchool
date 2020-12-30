@@ -14,6 +14,19 @@ namespace CapaPresentacion
 {
     public partial class ProfesorCP : Form
     {
+        // singleton
+        private static ProfesorCP instancia = null;
+        public static ProfesorCP Instancia
+        {
+            get
+            {
+                if ((instancia == null) || (instancia.IsDisposed))
+                {
+                    instancia = new ProfesorCP();
+                }
+                return instancia;
+            }
+        }
         public ProfesorCP()
         {
             InitializeComponent();
