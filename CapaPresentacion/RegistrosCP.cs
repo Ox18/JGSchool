@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -15,6 +17,11 @@ namespace CapaPresentacion
         public RegistrosCP()
         {
             InitializeComponent();
+        }
+
+        private void RegistrosCP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
