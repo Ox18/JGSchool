@@ -14,7 +14,7 @@ namespace CapaPresentacion
 {
     public partial class RegistrosCP : Form
     {
-        // singleton
+         // singleton
         private static RegistrosCP instancia = null;
         public static RegistrosCP Instancia
         {
@@ -39,7 +39,7 @@ namespace CapaPresentacion
 
         }
 
-        private void btnBuscarProfesor_Click(object sender, EventArgs e)
+        private void btnBuscarProfesor_Click_1(object sender, EventArgs e)
         {
             BuscarProfesor();
         }
@@ -237,7 +237,9 @@ namespace CapaPresentacion
             {
                 total = total + Convert.ToDouble(fila.Cells["nota"].Value);
             }
-            txtPromedio.Text = (total / divisor).ToString();
+            double promedio = total / divisor;
+            double promedioProcess = double.IsNaN(promedio) ? 0 : promedio;
+            txtPromedio.Text = promedioProcess.ToString();
         }
 
         private void btnGuardarRegistro_Click(object sender, EventArgs e)
@@ -256,14 +258,13 @@ namespace CapaPresentacion
                         int idCurso = Convert.ToInt32(txtIdCurso.Text);
                         DateTime fechaInicio = dtpFInicio.Value;
                         DateTime fechaTermino = dtpFTermino.Value;
+                        RegistroCE registroCE = new RegistroCE(0, idProfesor, idCurso, fechaInicio, fechaTermino);
+                        RegistroCN registroCN = new RegistroCN();
+
+                        int idRegistro = registroCN.Crear(registroCE);
 
                         foreach (DataGridViewRow fila in dgvDatos.Rows)
                         {
-                            RegistroCE registroCE = new RegistroCE(0, idProfesor, idCurso, fechaInicio, fechaTermino);
-                            RegistroCN registroCN = new RegistroCN();
-
-                            int idRegistro = registroCN.Crear(registroCE);
-
                             int idEstudiante = Convert.ToInt32(fila.Cells["idEstudiante"].Value);
                             int idEvaluacion = Convert.ToInt32(fila.Cells["idEvaluacion"].Value);
                             double nota = Convert.ToDouble(fila.Cells["nota"].Value);
@@ -276,6 +277,7 @@ namespace CapaPresentacion
                             Console.WriteLine("Registro guardado => " + idRegistro + " / " + idNotas);
                         }
                         LimpiarTodo();
+                        CalcularPromedio();
                     }
                 }
                 else
@@ -297,11 +299,52 @@ namespace CapaPresentacion
         {
             txtIdEstudiante.Text = "";
             txtEstudiante.Text = "";
+            txtCurso.Text = "";
+            txtIdCurso.Text = "";
         }
         private void LimpiarTodo()
         {
             LimpiarGrid();
             LimpiarInformacion();
+        }
+
+        private void lstEvaluacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarEstudiante_Click_1(object sender, EventArgs e)
+        {
+            BuscarEstudiante();
+        }
+
+        private void btnBuscarCurso_Click_1(object sender, EventArgs e)
+        {
+            BuscarCurso();
+        }
+
+        private void txtIdProfesor_PreviewKeyDown_1(object sender, PreviewKeyDownEventArgs e)
+        {
+            if(e.KeyCode == Keys.Tab)
+            {
+                BuscarProfesor();
+            }
+        }
+
+        private void txtIdCurso_PreviewKeyDown_1(object sender, PreviewKeyDownEventArgs e)
+        {
+            if(e.KeyCode == Keys.Tab)
+            {
+                BuscarCurso();
+            }
+        }
+
+        private void txtIdEstudiante_PreviewKeyDown_1(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                BuscarEstudiante();
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace CapaPresentacion
 
         private void getFetch()
         {
-            txtFecha.Text = DateTime.Now.Day.ToString() + " " + DateTime.Now.ToString("MMMM");
+            txtFecha.Text = DateTime.Now.Day.ToString() + " " + DateTime.Now.ToString("MMMM, yyyy");
             txtTime.Text = DateTime.Now.ToString("hh:mm tt"); 
         }
 
@@ -41,6 +41,43 @@ namespace CapaPresentacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrosCP.Instancia.MdiParent = this;
+            RegistrosCP.Instancia.WindowState = FormWindowState.Maximized;
+            RegistrosCP.Instancia.FormBorderStyle = FormBorderStyle.None;
+            RegistrosCP.Instancia.Show();
+            
+        }
+
+        private void profesorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProfesorCP.Instancia.MdiParent = this;
+            ProfesorCP.Instancia.WindowState = FormWindowState.Maximized;
+            ProfesorCP.Instancia.Show();
+        }
+
+        private void estudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstudianteCP.Instancia.MdiParent = this;
+            EstudianteCP.Instancia.WindowState = FormWindowState.Maximized;
+            EstudianteCP.Instancia.Show();
+        }
+
+        private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CursoCP.Instancia.MdiParent = this;
+            CursoCP.Instancia.WindowState = FormWindowState.Maximized;
+            CursoCP.Instancia.Show();
+        }
+
+        private void evaluaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EvaluacionCP.Instancia.MdiParent = this;
+            EvaluacionCP.Instancia.WindowState = FormWindowState.Maximized;
+            EvaluacionCP.Instancia.Show();
         }
     }
 }
